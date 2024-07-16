@@ -1,4 +1,5 @@
 
+require("adaptLua51")
 local behavior_tree = require "behavior3.behavior_tree"
 local behavior_node = require "behavior3.behavior_node"
 
@@ -15,6 +16,7 @@ behavior_node.process(process)
 local json = require "json"
 
 local function load_tree(path)
+    local path = getBTDir()..path
     local file, err = io.open(path, 'r')
     assert(file, err)
     local str = file:read('*a')

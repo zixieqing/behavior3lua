@@ -112,6 +112,10 @@ local function btree_func(code, env)
         func = load("return function(vars, math) _ENV = vars return " .. code .. " end")()
         btree_funcs[code] = func
     end
+    if _VERSION == "Lua 5.1" then
+        local _ENV = env.vars
+        setfenv(func, _ENV)
+    end
     return func(env.vars, math)
 end
 
