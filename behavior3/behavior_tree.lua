@@ -42,6 +42,9 @@ end
 ---@param env BehaviorEnv
 ---@return BehaviorRet
 function mt:run(env)
+    if not env.owner  then
+        return 
+    end
     local last_ret
     if #env.stack > 0 then
         local last_node = env.stack[#env.stack]
