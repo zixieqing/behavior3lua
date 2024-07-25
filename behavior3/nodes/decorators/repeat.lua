@@ -1,7 +1,8 @@
 local bret = require "behavior3.behavior_ret"
 
+---@type BehaviorNodeDefine
 local M = {
-    name = "Loop",
+    name = "Repeat",
     type = 'Action',
     desc = "循环执行",
     doc = [[
